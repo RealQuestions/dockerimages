@@ -1,10 +1,11 @@
 FROM phusion/baseimage:0.9.16
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install --fix-missing -y \
     git \
     python \
-    GCC \
+    gcc \
     g++ \
     make
 
