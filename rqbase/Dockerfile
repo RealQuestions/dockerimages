@@ -14,6 +14,8 @@ RUN mkdir /home/repositories
 WORKDIR /home/repositories
 RUN git clone https://github.com/joyent/node
 WORKDIR /home/repositories/node
+RUN git fetch
+RUN git checkout v0.12.5
 RUN ./configure
 RUN make
 RUN make install
