@@ -7,7 +7,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN   apt-get update 
 
 RUN   apt-get install -y software-properties-common && \
-      apt-get install -y lighttpd python php5-cgi
+      apt-get install -y lighttpd python php5-cgi curl php5-curl
+
+RUN   cd /usr/local/bin && \
+      curl -sS https://getcomposer.org/installer | php && \
+      php composer.phar require "everyman/neo4jphp" "dev-master"
 
 RUN   \ 
       lighty-enable-mod cgi fastcgi && \
