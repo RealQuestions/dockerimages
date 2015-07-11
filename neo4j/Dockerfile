@@ -42,5 +42,4 @@ RUN chmod +x /etc/init.d/neo4j
 USER neo4j
 
 EXPOSE 7474
-#run in foreground
-CMD neo4j console
+ENTRYPOINT ["neo4j", "console"]
