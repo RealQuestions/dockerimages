@@ -11,7 +11,8 @@ RUN   apt-get install -y software-properties-common && \
 
 RUN   cd /usr/local/bin && \
       curl -sS https://getcomposer.org/installer | php && \
-      php composer.phar require "everyman/neo4jphp" "dev-master"
+      php composer.phar require "everyman/neo4jphp" "dev-master" && \
+      php composer.phar require slim/slim
 
 RUN   \ 
       lighty-enable-mod cgi fastcgi && \
