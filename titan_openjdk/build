@@ -1,0 +1,9 @@
+# Build docker container
+# Use bash:
+# docker run --name titan_bash -ti titan /bin/bash
+
+wget -nc http://s3.thinkaurelius.com/downloads/titan/titan-1.0.0-hadoop1.zip
+
+unzip -n titan-1.0.0-hadoop1.zip -d titan
+
+docker build -t titan .
